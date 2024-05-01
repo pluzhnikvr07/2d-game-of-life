@@ -41,4 +41,17 @@ for i in range(row):
                     if count == 3:
                         pole1[i][j] = '*'
                     countss = []
-print(*pole1, sep='\n')         
+print(*pole1, sep='\n')
+
+
+
+
+
+mir = {(2, 4)}
+dxdy = ((-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0))
+near = []
+for dx, dy in dxdy:
+    for x, y in mir:
+        near.append((x + dx, y + dy))
+print(near)
+neighbours = set()
