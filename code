@@ -47,11 +47,13 @@ print(*pole1, sep='\n')
 
 
 
-mir = {(2, 4)}
+mir = {(2, 4), (2, 5), (6, 7), (3, 3), (1, 4)}
 dxdy = ((-1, -1), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0))
-near = []
-for dx, dy in dxdy:
-    for x, y in mir:
-        near.append((x + dx, y + dy))
-print(near)
-neighbours = set()
+near = set()
+all = {}
+for x, y in mir:
+    for dx, dy in dxdy:
+            near.add((x + dx, y + dy))
+    neighbours = near & mir
+    all[(x, y)] = neighbours
+print(all)
